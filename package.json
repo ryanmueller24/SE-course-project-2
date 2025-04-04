@@ -1,0 +1,22 @@
+{
+  "name": "se-course-project-2",
+  "version": "1.0.0",
+  "description": "Course Manager",
+  "main": "index.js",
+  "scripts": {
+    "start": "node backend/src/index.js", 
+    "dev": "nodemon backend/src/index.js"
+  },
+  "keywords": [],
+  "author": "Group 4",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^5.1.0",
+    "mysql2": "^3.14.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}
