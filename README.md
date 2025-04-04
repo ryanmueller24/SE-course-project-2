@@ -21,6 +21,10 @@ course-management-system/
 ├── package.json            # Node.js dependencies
 └── README.md               # Project documentation
 
+*** MAKE SURE This Is In Your .gitignore ***
+node_modules/
+.env
+
 *** STACK USED ***
 Frontend: HTML, CSS, JavaScript, Nginx
 Backend: Node.js, Express.js
