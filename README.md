@@ -34,7 +34,7 @@ Containerization: Docker
 *** FOR BACKEND DEPENDENCIES RUN ***
 npm install   # Technically you don't need this because you are using docker but just in case
 
-*** TO RUN THE DOCKEER FILES ***
+*** TO RUN THE DOCKER FILES ***
 docker-compose up   # This will Build all the necessary Docker images
 docker-compose up -d   # Or run in the background
 docker-compose down      # Stops the application
