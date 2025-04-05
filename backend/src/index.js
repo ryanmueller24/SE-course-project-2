@@ -9,7 +9,7 @@ require('dotenv').config();
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Create database connection pool
+// Create database connection pool through mysql
 const pool = mysql.createPool({
   host: process.env.DB_HOST || 'database',
   user: process.env.DB_USER || 'root',
@@ -69,11 +69,10 @@ const StudentModel = {
   // Get average score
   getAverageScore: async () => {
     try {
-      const students = await StudentModel.getAllSorted();
-      if (students.length === 0) return 0;
-
-      const totalScore = students.reduce((sum, student) => sum + student.score, 0);
-      return totalScore / students.length;
+      const [rows] = await pool.query(
+        'SELECT AVG(score) as average FROM students'
+      );
+      return rows[0].average || 0;
     } catch (error) {
       throw error;
     }
@@ -92,11 +91,12 @@ const StudentModel = {
   }
 };
 
-// Middleware
+// the Middleware 
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// API Section ****
 // API: Get all students
 app.get('/api/students', async (req, res) => {
   try {
@@ -155,6 +155,7 @@ app.post('/api/students', async (req, res) => {
   }
 });
 
+// SETTING up the server 
 // Start server
 const startServer = async () => {
   // Check database connection (with retries)
