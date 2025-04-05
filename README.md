@@ -19,7 +19,22 @@ course-management-system/
 │   └── Dockerfile          # Database container configuration
 ├── docker-compose.yml      # Docker composition file
 ├── package.json            # Node.js dependencies
+├── package-lock.json       # Node.js dependencies
 └── README.md               # Project documentation
+
+*** To Pull all and Run the Container since we have a docker-compose.yml ***
+docker-compose pull    <!-- pulls latest images -->
+docker-compose build     <!-- build images -->   
+docker-compose up       <!-- start services -->
+docker-compose ps    <!-- check status of the running services  -->
+
+*****************************
+* * * * * * * * * * * * * * *
+*****************************
+
+
+
+
 
 *** MAKE SURE This Is In Your .gitignore ***
 node_modules/
@@ -42,5 +57,19 @@ docker-compose down      # Stops the application
 *** IF YOU MAKE CHANGES TO THE CODE THEN RUN ***
 docker-compose build
 docker-compose up
+
+
+*** Creating New Tags for an Image: Sets it up on the Repo ***
+docker-compose build
+docker push rpm24/swe_project_2:frontend
+docker push rpm24/swe_project_2:backend
+docker push rpm24/swe_project_2:database
+
+*** To Pull them individually ***
+docker pull rpm24/swe_project_2:frontend
+docker pull rpm24/swe_project_2:backend
+docker pull rpm24/swe_project_2:database
+
+
 
 *** Using Docker allows for packaging everything the application needs to run - including dependencies, configuration, and environment - into containers that will work consistently across different systems. *** 
