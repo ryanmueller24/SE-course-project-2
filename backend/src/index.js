@@ -1,4 +1,3 @@
-
 // Importing required modules: Express for server creation, CORS for handling cross-origin requests, 
 // MySQL2 for database interaction, and dotenv for loading environment variables.
 const express = require('express');
@@ -33,7 +32,6 @@ const checkConnection = async () => {
     return false;
   }
 };
-
 
 // Student model functions
 const StudentModel = {
@@ -99,8 +97,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // API Section ****
-
-
 // API: Get all students
 app.get('/api/students', async (req, res) => {
   try {
@@ -160,7 +156,6 @@ app.post('/api/students', async (req, res) => {
 });
 
 // SETTING up the server 
-
 // Start server
 const startServer = async () => {
   // Check database connection (with retries)
