@@ -1,7 +1,6 @@
 # SE-course-project-2
 
 *** STRUCTURE OF OUR PROJECT ***
-
 course-management-system/
 ├── backend/                # Node.js backend service
 │   ├── src/
@@ -32,7 +31,32 @@ docker-compose ps    <!-- check status of the running services  -->
 * * * * * * * * * * * * * * *
 *****************************
 
+*** Complete Refresh ***
+docker-compose down
+docker-compose build
+docker-compose up -d
 
+
+*** MySQL test commands ***
+show databases;
+use course_db; 
+show tables; 
+select * from students; 
+
+INSERT INTO students (student_id, first_name, middle_name, last_name, score) VALUES 
+(10, 'Emily', 'Jane', 'Wilson', 87),
+(2, 'Michael', 'Thomas', 'Rodriguez', 93),
+(7, 'Sarah', NULL, 'Johnson', 78),
+(4, 'David', 'Lee', 'Chen', 65),
+(9, 'Jessica', 'Marie', 'Patel', 71),
+(3, 'Mohammed', 'Ali', 'Hassan', 89),
+(6, 'Olivia', 'Grace', 'Smith', 92),
+(1, 'James', 'Robert', 'Williams', 54);
+
+*** Port Issues: Test Port, then get process name, then delete ***
+netstat -ano | findstr :[PORT]
+tasklist | findstr [PID]|
+taskkill /PID [PORT] /F
 
 
 
