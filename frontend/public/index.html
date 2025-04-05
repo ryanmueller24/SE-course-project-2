@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Management System</title>
+    <!-- links to css -->
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Course Management System</h1>
+
+        <div class="form-container">
+            <h2>Add Student</h2>
+            <form id="student-form">
+              <div class="form-group">
+                <label for="student_id">Student ID (1-10):</label>
+                <input type="number" id="student_id" min="1" max="10" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="first_name">First Name:</label>
+                <input type="text" id="first_name" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="middle_name">Middle Name:</label>
+                <input type="text" id="middle_name">
+              </div>
+              
+              <div class="form-group">
+                <label for="last_name">Last Name:</label>
+                <input type="text" id="last_name" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="score">Score (0-100):</label>
+                <input type="number" id="score" min="0" max="100" step="0.01" required>
+              </div>
+              
+              <button type="submit">Add Student</button>
+            </form>
+          </div>
+          
+          <div class="data-container">
+            <h2>Student Data</h2>
+            <p><strong>Average Score:</strong> <span id="average-score">0.00</span></p>
+            
+            <table>
+              <thead>
+                <tr>
+                  <th>Student ID</th>
+                  <th>Name</th>
+                  <th>Score</th>
+                </tr>
+              </thead>
+              <tbody id="students-list"></tbody>
+            </table>
+          </div>
+        </div>
+
+    <!-- links to js -->
+    <script src="/js/main.js"></script>
+</body>
+</html>
