@@ -11,7 +11,7 @@ course-management-system/
 │   │   ├── index.html      # Main HTML page
 │   │   ├── css/            # Stylesheets
 │   │   └── js/             # Client-side JavaScript
-│   ├── nginx.conf          # Nginx configuration
+│   ├── nginx.conf          # Nginx configuration (runs the webserver)
 │   └── Dockerfile          # Frontend container configuration
 ├── database/               # Database service
 │   ├── init.sql            # Database initialization script
@@ -22,10 +22,21 @@ course-management-system/
 └── README.md               # Project documentation
 
 *** To Pull all and Run the Container since we have a docker-compose.yml ***
+push the tags to the repo:
+
+docker push rpm24/swe_project_2:frontend
+docker push rpm24/swe_project_2:backend
+docker push rpm24/swe_project_2:database
+
+
 docker-compose pull    <!-- pulls latest images -->
 docker-compose build     <!-- build images -->   
 docker-compose up       <!-- start services -->
 docker-compose ps    <!-- check status of the running services  -->
+
+or to run combining those commands, if no changes to the image:
+
+docker-compose up --build
 
 *****************************
 * * * * * * * * * * * * * * *
